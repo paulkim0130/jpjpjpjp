@@ -4,6 +4,7 @@ import random
 #addition function
 def addition_func1():
     count = 0
+    answer_streak = 0
     x1 = random.randint(1, 10)
     y1 = random.randint(1, 10)
     while 1:
@@ -13,6 +14,7 @@ def addition_func1():
         if z1 == x1+y1:
             print("correct")
             count = count + 1
+            answer_streak = answer_streak + 1
             break
         else:
             print("incorrect, please try again")
@@ -22,6 +24,7 @@ def addition_func1():
 
 def addition_func2():
     count = 0
+    answer_streak = 0
     x1 = random.randint(30, 100)
     y1 = random.randint(30, 100)
     while 1:
@@ -31,6 +34,7 @@ def addition_func2():
         if z1 == x1+y1:
             print("correct")
             count = count + 1
+            answer_streak = answer_streak + 1
             break
         else:
             print("incorrect, please try again")
@@ -39,6 +43,7 @@ def addition_func2():
     print("you took ", count, "trials to solve this question")
 
 def addition_func3():
+    answer_streak = 0
     count = 0
     x1 = random.randint(80, 1000)
     y1 = random.randint(80, 1000)
@@ -49,6 +54,7 @@ def addition_func3():
         if z1 == x1+y1:
             print("correct")
             count = count + 1
+            answer_streak = answer_streak + 1
             break
         else:
             print("incorrect, please try again")
@@ -59,6 +65,7 @@ def addition_func3():
 #subtract function
 def subtraction_func1():
     count = 0
+    answer_streak = 0
     x2 = random.randint(11, 20)
     y2 = random.randint(1, 10)
     while 1:
@@ -68,6 +75,7 @@ def subtraction_func1():
         if z2 == x2-y2:
             print("correct")
             count = count + 1
+            answer_streak = answer_streak + 1
             break
         else:
             print("incorrect, please try again")
@@ -78,7 +86,7 @@ def subtraction_func1():
 def subtraction_func2():
     count = 0
     x2 = random.randint(60, 100)
-    y2 = random.randint(20, 40)
+    y2 = random.randint(15, 35)
     while 1:
         print(x2, "-", y2, "=?")
         z2 = int(input("answer? "))
@@ -115,8 +123,8 @@ def subtraction_func3():
 #multiplication function
 def multiplication_func():
     count = 0
-    x3 = random.randint(1, 40)
-    y3 = random.randint(1, 40)
+    x3 = random.randint(15, 40)
+    y3 = random.randint(15, 40)
     while 1:
         print(x3, "x", y3, "=?")
         z3 = int(input("answer? "))
@@ -134,24 +142,27 @@ def multiplication_func():
 
 #division function
 def division_func():
-    count = 0
-    x4 = random.randint(60, 100)
-    y4 = random.randint(1, 40)
-    x4%y4 == 0
-    while 1:
-        print(x4, "÷", y4, "= ?")
-        z4 = int(input("answer? "))
-
-        if z4 == x4/y4:
-            print("correct")
-            count = count + 1
+    while True:
+        count = 0
+        x4 = random.randint(60, 100)
+        y4 = random.randint(2, 40)
+        if x4%y4 == 0:
+            while 1:
+                print(x4, "÷", y4, "= ?")
+                z4 = int(input("answer? "))
+                if z4 == x4/y4:
+                    print("correct")
+                    count = count + 1
+                    break
+                else:
+                    print("incorrect, please try again")
+                    count = count + 1     
+            print("you took ", count, "trials to solve this question")
             break
         else:
-            print("incorrect, please try again")
-            count = count + 1
-        
-    print("you took ", count, "trials to solve this question")
-
+            x4 = random.randint(60, 100)
+            y4 = random.randint(1, 40)
+            False
 
 
 #program start
@@ -171,7 +182,7 @@ while 1:
         elif count > 50: 
             print("I will wait you no more.")
 
-print("Please type in your grade")
+print("Please type in your grade \ndifficulty for multiplication and division will not change")
 grade_lvl = int(input())
 
 print("type 1 for addition, 2 for subtraction, 3 for multiplication, 4 for division")
@@ -181,7 +192,7 @@ num = int(input())
 if num == 1 and grade_lvl >= 1 and grade_lvl <= 2:
     while 1:
         addition_func1()
-        print("more question? Y=1, N=2")
+        print("more question? you will continue with your answer streak. Y=1, N=2")
         decision = int(input())
         if decision == 1:
             False
@@ -238,7 +249,7 @@ elif num == 3:
     while 1: 
         multiplication_func()
         print("more question? Y=1, N=2")
-        decision = input()
+        decision = int(input())
         if decision == 1:
             False
         else:
@@ -247,11 +258,12 @@ elif num == 4:
     while 1: 
         division_func()
         print("more question? Y=1, N=2")
-        decision = input()
+        decision = int(input())
         if decision == 1:
             False
         else:
             break
-
+            
+print("you have solved ", answer_streak, "questions in a row!")
 print("you have been quit")
-print("you can always come back if you want to")
+print("you can always come back by typing 0 if you want to")
