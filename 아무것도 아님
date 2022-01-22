@@ -1,0 +1,130 @@
+import random
+
+
+#addition function
+def addition_func():
+    count = 0
+    x1 = random.randint(1, 100)
+    y1 = random.randint(1, 100)
+    while 1:
+        print(x1, "+", y1, "=?")
+        z1 = int(input("what is the answer of {} + {}? ".format(x1, y1)))
+
+        if z1 == x1+y1:
+            print("correct")
+            count = count + 1
+            break
+        else:
+            print("incorrect, please try again")
+            count = count + 1
+    
+    print("you took ", count, "trials to solve this question")
+
+#subtract function
+def subtraction_func():
+    count = 0
+    x2 = random.randint(60, 100)
+    y2 = random.randint(1, 40)
+    while 1:
+        print(x2, "-", y2, "=?")
+        z2 = int(input("answer? "))
+
+        if z2 == x2-y2:
+            print("correct")
+            count = count + 1
+            break
+        else:
+            print("incorrect, please try again")
+            count = count + 1
+        
+    print("you took ", count, "trials to solve this question")
+
+
+#multiplication function
+def multiplication_func():
+    count = 0
+    x3 = random.randint(1, 40)
+    y3 = random.randint(1, 40)
+    while 1:
+        print(x3, "x", y3, "=?")
+        z3 = int(input("what is the answer of {} + {}? ".format(x3, y3)))
+
+        if z3 == x3*y3:
+            print("correct")
+            count = count + 1
+            break
+        else:
+            print("incorrect, please try again")
+            count = count + 1
+    
+    print("you took ", count, "trials to solve this question")
+
+
+#division function
+def division_func():
+    count = 0
+    x4 = random.randint(60, 100)
+    y4 = random.randint(1, 40)
+    x4%y4 == 0
+    while 1:
+        print(x4, "÷", y4, "= ?")
+        z4 = int(input("answer? "))
+
+        if z4 == x4/y4:
+            print("correct")
+            count = count + 1
+            break
+        else:
+            print("incorrect, please try again")
+            count = count + 1
+        
+    print("you took ", count, "trials to solve this question")
+
+
+
+count = 0
+print("welcome to main station")
+while 1: 
+    print("type 0 to enter")
+    a = int(input())
+
+    if a == 0: 
+        break
+    else: 
+        count = count + 1
+        if count >= 1 and count <= 5:
+            print("you don't like math, do you?")
+        elif count > 5 and count < 10:
+            print("Please stop this")
+        elif count >= 10: 
+            print("I will wait you no more.")
+
+print("type 1 for addition, 2 for subtraction, 3 for multiplication, 4 for division")
+print("or you can quit by pressing enter")
+num = int(input())
+if num == 1:
+    addition_func()
+    print("more question? Y=1, N=2")
+    decision = input()
+    if decision == 1:
+        addition_func()
+elif num == 2: 
+    subtraction_func()
+    print("more question? Y=1, N=2")
+    decision = input()
+    if decision == 1:
+        subtraction_func()
+elif num == 3:
+    multiplication_func()
+    print("more question? Y=1, N=2")
+    decision = input()
+    if decision == 1:
+        multiplication_func()
+elif num == 4:
+    division_func()
+    print("more question? Y=1, N=2")
+    decision = input()
+    if decision == 1:
+        division_func()
+else:
+    ("you have been quit")
