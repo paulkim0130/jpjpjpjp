@@ -103,28 +103,41 @@ print("type 1 for addition, 2 for subtraction, 3 for multiplication, 4 for divis
 print("or you can quit by pressing enter")
 num = int(input())
 if num == 1:
-    addition_func()
-    print("more question? Y=1, N=2")
-    decision = input()
-    if decision == 1:
+    while 1:
         addition_func()
+        print("more question? Y=1, N=2")
+        decision = int(input())
+        if decision == 1:
+            addition_func()
+        else: 
+            break
 elif num == 2: 
-    subtraction_func()
-    print("more question? Y=1, N=2")
-    decision = input()
-    if decision == 1:
+    while 1: 
         subtraction_func()
+        print("more question? Y=1, N=2")
+        decision = input()
+        if decision == 1:
+            subtraction_func()
+        else: 
+            break
 elif num == 3:
-    multiplication_func()
-    print("more question? Y=1, N=2")
-    decision = input()
-    if decision == 1:
+    while 1: 
         multiplication_func()
+        print("more question? Y=1, N=2")
+        decision = input()
+        if decision == 1:
+            multiplication_func()
+        else:
+            break
 elif num == 4:
-    division_func()
-    print("more question? Y=1, N=2")
-    decision = input()
-    if decision == 1:
+    while 1: 
         division_func()
-else:
-    ("you have been quit")
+        print("more question? Y=1, N=2")
+        decision = input()
+        if decision == 1:
+            division_func()
+        else:
+            break
+
+print("you have been quit")
+print("you can always come back if you want to")
