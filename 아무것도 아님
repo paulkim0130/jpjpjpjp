@@ -156,7 +156,7 @@ def division_func():
                     break
                 else:
                     print("incorrect, please try again")
-                    count = count + 1     
+                    count = count + 1
             print("you took ", count, "trials to solve this question")
             break
         else:
@@ -167,7 +167,7 @@ def division_func():
 
 #program start
 count = 0
-print("welcome to main station")
+print("Hello, Welcome to Math Question Bank. \nYou will get some questions that is proper on your grade. ")
 while 1: 
     print("type 0 to enter")
     a = int(input())
@@ -292,4 +292,4 @@ else:
 
 
 print("you have been quit")
-print("See You Again")
+print("hope you had a good revision! \nyou can always come back if you want to")
