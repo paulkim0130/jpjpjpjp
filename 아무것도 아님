@@ -271,35 +271,25 @@ elif num == 4:
         else:
             break
 else: 
-    while 1: 
-        a = int(input())
-        count = 0
-        if a == 0: 
-            break
+    a = random.randint(1, 100)
+    n = 0
+    print("You have found out the hidden space of this program")
+    print("Try to guess the random number that computer has chosen for you!")
+    q = 0
+    while a != q: 
+        q = int(input("type number 1~100"))
+        if q < a: 
+            print("up")
+            n += 1
+        elif q > a: 
+            print("down")
+            n += 1
         else: 
-            if count >= 0 and count <= 20 and a != 1 and a != 2 and a != 3 and a != 4:
-                print("Please type in the correct value")
-            elif count > 20 and count <= 50:
-                print("I'm sorry kid, but there is nothing hidden")
-            elif count > 50: 
-                a = random.randint(1, 100)
-                n = 0
-                print("You have found out the hidden space of this program")
-                print("Try to guess the random number that computer has chosen for you!")
-                q = 0
-                while a != q: 
-                    q = int(input("type number 1~100"))
-                    if q < a: 
-                        print("up")
-                        n += 1
-                    elif q > a: 
-                        print("down")
-                        n += 1
-                    else: 
-                        print("correct!")
-                        n += 1
-                        print("It took you {} trys to find the number!".format(n))
-                        break
-            
+            print("correct!")
+            n += 1
+            print("It took you {} trys to find the number!".format(n))
+            break
+
+
 print("you have been quit")
 print("you can always come back by typing 0 if you want to")
