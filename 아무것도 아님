@@ -292,4 +292,4 @@ else:
 
 
 print("you have been quit")
-print("you can always come back by typing 0 if you want to")
+print("See You Again")
